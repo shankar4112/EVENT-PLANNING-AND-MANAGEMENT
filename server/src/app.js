@@ -10,10 +10,7 @@ const ticketRouter = require('./routes/ticket_route');
 const venueRouter = require('./routes/venue_route');
 app.use(morgan('combined'));
 
-app.get('/',(req,res)=>{
-    res.send("This is home...");
-});
-
+app.use(express.static('public'));
 app.use('/attendee',attendeeRouter);
 app.use('/events',eventRouter);
 app.use('/organizer',organizerRouter);
